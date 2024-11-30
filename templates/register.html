@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <script defer src="./main.js"></script>
+
+
+    <title>Registro Fastery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .container img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form > *:not(button) {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header class="container-fluid">
+
+        <div>
+            <img src="./images css/Logo_Empresa.jpeg" alt=" logo de la Empresa.">
+
+        </div>
+
+        <nav>
+            <ul>
+               
+                <a href="./inicio.html"><li class="opciones"> Inicio </li></a>
+                <a href="./register.html"><li > Registrarse </li></a> <!-- etiqueta a es para un link, la etiqueta li es para un listado. -->
+                <a href="./inicio.html"><li class="opciones"> ingresar </li></a>
+                <a href="./Acerca_de_nosotros.html"><li > Acerca de nosotros </li></a>
+        
+            </ul>
+
+        </nav>
+
+    </header>
+
+    
+    <div class="container">
+        <h1>REGISTRO</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Confirmar</button>
+        </form>
+    </div>
+</body>
+</html>
